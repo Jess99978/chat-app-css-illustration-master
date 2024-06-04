@@ -8,6 +8,7 @@ body {
   font-family: "Rubik", sans-serif;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .background-block {
@@ -116,6 +117,46 @@ body {
   font-size: 0.6rem;
   font-weight: 400;
   color: hsl(276, 100%, 81%);
+}
+.mobile-app__chat-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.chatbox-walker {
+  padding: 12px;
+  color: hsl(276, 55%, 52%);
+  background: #ebe1f2;
+  font-size: 0.6rem;
+  align-self: flex-start;
+  border-radius: 5px 8px 8px 5px;
+}
+.chatbox-user {
+  padding: 12px;
+  color: hsl(271, 15%, 43%);
+  background: hsl(0, 0%, 100%);
+  font-size: 0.6rem;
+  align-self: flex-end;
+  border-radius: 8px 8px 5px 8px;
+}
+.chatbox-user-img {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+}
+.chatbox-user-img .img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.chatbox-user-img .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */

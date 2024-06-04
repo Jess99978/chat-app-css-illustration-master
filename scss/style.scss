@@ -10,6 +10,7 @@ body {
   font-family: $font-family;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .background-block {
@@ -120,7 +121,45 @@ body {
       color: $pale-violet;
     }
   }
-  &__chat-area{
-    
+  &__chat-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+}
+.chatbox {
+  &-walker {
+    padding: 12px;
+    color: $moderate-violet;
+    background: #ebe1f2;
+    font-size: 0.6rem;
+    align-self: flex-start;
+    border-radius: 5px 8px 8px 5px;
+  }
+  &-user {
+    padding: 12px;
+    color: $desaturated-dark-violet;
+    background: $white;
+    font-size: 0.6rem;
+    align-self: flex-end;
+    border-radius: 8px 8px 5px 8px;
+    &-img{
+        display: flex;
+        gap: 10px;
+        align-self: flex-end;
+        .img{
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+    }
   }
 }
