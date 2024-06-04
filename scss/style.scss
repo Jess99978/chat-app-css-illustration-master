@@ -1,0 +1,126 @@
+// 引入變數
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: $light-grayish-violet;
+  font-size: $base-font-size;
+  font-family: $font-family;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-block {
+  height: 90%;
+  width: 30%;
+  position: absolute;
+  z-index: -1;
+  &--purple {
+    border-radius: 0 0 50% 50%;
+    background: linear-gradient($Light-magenta, $Light-violet);
+    top: -10%;
+    left: -8%;
+  }
+  &--gray {
+    border-radius: 50% 50% 0 0;
+    background: $grayish-blue;
+    top: 10%;
+    right: -8%;
+  }
+}
+
+.container {
+  max-width: 60%;
+  margin-top: 8%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  z-index: 100;
+}
+
+.mobile-app {
+  &__container {
+    flex: 0 0 375px;
+    border: 10px solid $white;
+    border-radius: 15px;
+    z-index: 100;
+  }
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    h1 {
+      color: $very-dark-desaturated-violet;
+      font-weight: 500;
+    }
+    p {
+      line-height: 1.6rem;
+      font-weight: 400;
+      color: $dark-grayish-violet;
+    }
+  }
+  &__screen-header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 90px;
+    border-radius: 15px 15px 5px 5px;
+    background: linear-gradient($Light-violet, $Light-magenta);
+  }
+  &__screen-notch {
+    width: 50%;
+    height: 35px;
+    border-radius: 17.5px;
+    background: $white;
+    position: absolute;
+    top: -10px;
+    left: 88.75px;
+  }
+  &__profile {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    padding-inline: 15px;
+    gap: 10px;
+    height: 50px;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  &__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid $white;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    .name {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $light-grayish-violet;
+    }
+    .status {
+      margin: 0;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: $pale-violet;
+    }
+  }
+  &__chat-area{
+    
+  }
+}
