@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -119,26 +120,60 @@ body {
   color: hsl(276, 100%, 81%);
 }
 .mobile-app__chat-area {
+  background: hsl(270, 20%, 96%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 15px;
+  padding-inline: 8px;
   gap: 15px;
+}
+.mobile-app__input-area {
+  display: flex;
+  position: relative;
+  width: 95%;
+  height: 40px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.mobile-app__input-area input {
+  width: 100%;
+  border-radius: 20px;
+  padding-inline: 20px;
+  border: transparent;
+  background: hsl(0, 0%, 100%);
+}
+.mobile-app__input-area .btn {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 5px;
+  background: hsl(271, 36%, 24%);
 }
 
 .chatbox-walker {
-  padding: 12px;
+  max-width: 55%;
+  line-height: 1.1rem;
+  padding: 8px;
   color: hsl(276, 55%, 52%);
   background: #ebe1f2;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   align-self: flex-start;
   border-radius: 5px 8px 8px 5px;
 }
 .chatbox-user {
-  padding: 12px;
+  max-width: 55%;
+  line-height: 1.1rem;
+  padding: 8px;
   color: hsl(271, 15%, 43%);
   background: hsl(0, 0%, 100%);
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   align-self: flex-end;
   border-radius: 8px 8px 5px 8px;
 }
@@ -157,6 +192,82 @@ body {
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
+}
+.chatbox-walker-price {
+  align-self: flex-start;
+  max-width: 80%;
+  padding: 15px;
+  border-radius: 10px 10px 10px 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+}
+.chatbox-walker-price .time {
+  color: #dd9aff;
+  font-size: 0.7rem;
+  margin-right: 25px;
+}
+.chatbox-walker-price .price {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+}
+
+/* 隱藏預設的 checkbox */
+.custom-checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* 自訂 checkbox 的外觀 */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* 自訂的 checkbox */
+.custom-checkbox .checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 2px solid #dd9aff;
+}
+
+/* 當 checkbox 被點選時，改變背景顏色 */
+/* 當 checkmark 被選中時，顯示出來 */
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* 顯示出來的 checkmark */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* 自訂 checkmark 的樣式 */
+.custom-checkbox .checkmark:after {
+  width: 4px;
+  height: 8px;
+  border: solid #dd9aff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 /*# sourceMappingURL=style.css.map */
