@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  background: $light-grayish-violet;
+  background: #f9f9f9;
   font-size: $base-font-size;
   font-family: $font-family;
   width: 100vw;
@@ -26,7 +26,7 @@ body {
   }
   &--gray {
     border-radius: 50% 50% 0 0;
-    background: $grayish-blue;
+    background: #f8f2f9;
     top: 10%;
     right: -8%;
   }
@@ -37,9 +37,8 @@ body {
   margin-top: 8%;
   margin-inline: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 15%;
   z-index: 100;
 }
 
@@ -47,13 +46,14 @@ body {
   &__container {
     flex: 0 0 375px;
     border: 10px solid $white;
-    border-radius: 15px;
+    border-radius: 30px;
     z-index: 100;
+    box-shadow: 10px 20px 25px #ccccccbd;
   }
   &__intro {
     display: flex;
     flex-direction: column;
-    max-width: 450px;
+    max-width: 500px;
     h1 {
       color: $very-dark-desaturated-violet;
       font-weight: 500;
@@ -69,7 +69,8 @@ body {
     position: relative;
     width: 100%;
     height: 90px;
-    border-radius: 15px 15px 5px 5px;
+    border-radius: 20px 20px 5px 5px;
+    box-shadow: 0 4px 8px #ccccccbd;
     background: linear-gradient($Light-violet, $Light-magenta);
   }
   &__screen-notch {
@@ -127,6 +128,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 0 0 20px 20px;
     padding-top: 15px;
     padding-inline: 8px;
     gap: 15px;
@@ -144,6 +146,9 @@ body {
       padding-inline: 20px;
       border: transparent;
       background: $white;
+    }
+    input:focus{
+      outline: none;
     }
     .btn {
       display: flex;
@@ -168,6 +173,7 @@ body {
     background: #ebe1f2;
     font-size: 0.75rem;
     align-self: flex-start;
+        box-shadow: 0 4px 8px #cccccc8f;
     border-radius: 5px 8px 8px 5px;
   }
   &-user {
@@ -178,6 +184,7 @@ body {
     background: $white;
     font-size: 0.75rem;
     align-self: flex-end;
+        box-shadow: 0 4px 8px #cccccc8f;
     border-radius: 8px 8px 5px 8px;
     &-img {
       display: flex;
@@ -201,6 +208,7 @@ body {
     max-width: 80%;
     padding: 15px;
     border-radius: 10px 10px 10px 5px;
+            box-shadow: 0 4px 8px #cccccc8f;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -252,10 +260,6 @@ body {
   border: 2px solid #dd9aff;
 }
 
-/* 當 checkbox 被點選時，改變背景顏色 */
-// .custom-checkbox input:checked ~ .checkmark {
-//   background-color: $very-dark-desaturated-violet;
-// }
 /* 當 checkmark 被選中時，顯示出來 */
 .custom-checkbox .checkmark:after {
   content: "";
