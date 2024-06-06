@@ -84,7 +84,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   max-width: 400px;
 }
 .mobile-app__intro h1 {
