@@ -16,12 +16,10 @@
 
 ### 專案介紹
 
-這個專案採用了響應式網頁設計（RWD），支援電腦版和移動設備版。請調整瀏覽器的螢幕寬度來檢視不同的版型：
+這個專案使用 SCSS ＋ HTML 進行撰寫，並遵守 BEM 命名原則。同時，也採用了響應式網頁設計（RWD），支援電腦版和移動設備版。請調整瀏覽器的螢幕寬度來檢視不同的版型：
 
 - 電腦版（> 768 px）
 - 移動設備版（< 768 px，包括手機和平板）
-
-這個專案使用 SCSS ＋ HTML 進行撰寫，並遵守 BEM 命名原則
 
 #### [線上預覽](https://jess99978.github.io/chat-app-css-illustration-master/)
 
@@ -46,12 +44,10 @@
 - Git 版本控制
 
 ### 我學到的內容
-
-- 練習自定義 svg 圖檔樣式
-- 嘗試加入 fav-icon
-- 更加熟悉 CSS 的漸層(linear-gradient)、圓角(border-radius)的使用
 - 引入 cdn 的 normalize.css 來標準化瀏覽器預設樣式
-- 練習用 SCSS 的 mixin 和 include 來簡化重複樣式，例如 flex 的定義和兩種對話框的重複樣式
+- 練習自定義 svg 圖檔、checkbox 及 input 輸入框的樣式
+- 熟悉 CSS 的漸層(linear-gradient)、圓角(border-radius)的使用
+- 用 SCSS 的 mixin 和 include 來簡化重複樣式，例如 flex 的定義和兩種對話框的重複樣式
 
 ### 持續精進
 
