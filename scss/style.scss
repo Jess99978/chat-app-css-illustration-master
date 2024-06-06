@@ -8,12 +8,7 @@ body {
   background: #f9f9f9;
   font-size: $base-font-size;
   font-family: $font-family;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  @media (max-width: 768px) {
-    height: auto;
-  }
+  overflow-x: hidden;
 }
 
 .background-block {
@@ -60,7 +55,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
   @media (max-width: 768px) {
     max-width: 75%;
     gap: 50px;
@@ -75,13 +69,12 @@ body {
     flex: 0 0 375px;
     border: 10px solid $white;
     border-radius: 30px;
-    z-index: 100;
     box-shadow: 10px 20px 25px #ccccccbd;
   }
   &__intro {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 400px;
     h1 {
       color: $very-dark-desaturated-violet;
       font-weight: 500;
@@ -107,10 +100,10 @@ body {
     height: 90px;
     border-radius: 20px 20px 5px 5px;
     box-shadow: 0 4px 8px #ccccccbd;
-    background: linear-gradient($Light-violet, $Light-magenta);
+    background: linear-gradient(to right, $Light-violet, $Light-magenta);
     @media (max-width: 768px) {
-    height: 75px;
-  }
+      height: 75px;
+    }
   }
   &__screen-notch {
     width: 50%;
@@ -132,7 +125,7 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-  &__profile-left{
+  &__profile-left {
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -294,14 +287,6 @@ body {
     }
   }
 }
-/* 隱藏預設的 checkbox */
-.custom-checkbox input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
 
 /* 自訂 checkbox 的外觀 */
 .custom-checkbox {
@@ -312,40 +297,41 @@ body {
   cursor: pointer;
   font-size: 22px;
   user-select: none;
-}
-
-/* 自訂的 checkbox */
-.custom-checkbox .checkmark {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  height: 24px;
-  width: 24px;
-  // background-color: $white;
-  border: 2px solid #dd9aff;
-}
-
-/* 當 checkmark 被選中時，顯示出來 */
-.custom-checkbox .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* 顯示出來的 checkmark */
-.custom-checkbox input:checked ~ .checkmark:after {
+  /* 隱藏預設的 checkbox */
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  // /* 自訂的 checkbox */
+  .checkmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 2px solid #dd9aff;
+    /* 當 checkmark 被選中時，顯示出來 */
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      // 自訂 checkmark 樣式
+      width: 4px;
+      height: 8px;
+      border: solid #dd9aff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+  /* 顯示出來的 checkmark */
+  input:checked ~ .checkmark:after {
   display: block;
 }
-
-/* 自訂 checkmark 的樣式 */
-.custom-checkbox .checkmark:after {
-  width: 4px;
-  height: 8px;
-  border: solid #dd9aff;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
 }

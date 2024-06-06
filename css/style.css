@@ -7,14 +7,7 @@ body {
   background: #f9f9f9;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-@media (max-width: 768px) {
-  body {
-    height: auto;
-  }
+  overflow-x: hidden;
 }
 
 .background-block {
@@ -67,7 +60,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
 }
 @media (max-width: 768px) {
   .container {
@@ -83,13 +75,12 @@ body {
   flex: 0 0 375px;
   border: 10px solid hsl(0, 0%, 100%);
   border-radius: 30px;
-  z-index: 100;
   box-shadow: 10px 20px 25px rgba(204, 204, 204, 0.7411764706);
 }
 .mobile-app__intro {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 400px;
 }
 .mobile-app__intro h1 {
   color: hsl(271, 36%, 24%);
@@ -119,7 +110,7 @@ body {
   height: 90px;
   border-radius: 20px 20px 5px 5px;
   box-shadow: 0 4px 8px rgba(204, 204, 204, 0.7411764706);
-  background: linear-gradient(hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+  background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
 }
 @media (max-width: 768px) {
   .mobile-app__screen-header {
@@ -317,15 +308,6 @@ body {
   font-weight: 600;
 }
 
-/* 隱藏預設的 checkbox */
-.custom-checkbox input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
 /* 自訂 checkbox 的外觀 */
 .custom-checkbox {
   display: block;
@@ -335,9 +317,16 @@ body {
   cursor: pointer;
   font-size: 22px;
   user-select: none;
+  /* 隱藏預設的 checkbox */
+  /* 顯示出來的 checkmark */
 }
-
-/* 自訂的 checkbox */
+.custom-checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 .custom-checkbox .checkmark {
   display: flex;
   justify-content: center;
@@ -349,27 +338,20 @@ body {
   height: 24px;
   width: 24px;
   border: 2px solid #dd9aff;
+  /* 當 checkmark 被選中時，顯示出來 */
 }
-
-/* 當 checkmark 被選中時，顯示出來 */
-.custom-checkbox .checkmark:after {
+.custom-checkbox .checkmark::after {
   content: "";
   position: absolute;
   display: none;
-}
-
-/* 顯示出來的 checkmark */
-.custom-checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* 自訂 checkmark 的樣式 */
-.custom-checkbox .checkmark:after {
   width: 4px;
   height: 8px;
   border: solid #dd9aff;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
