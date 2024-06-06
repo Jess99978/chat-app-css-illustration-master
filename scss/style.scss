@@ -11,6 +11,9 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  @media (max-width: 768px) {
+    height: auto;
+  }
 }
 
 .background-block {
@@ -18,17 +21,35 @@ body {
   width: 30%;
   position: absolute;
   z-index: -1;
+  @media (max-width: 768px) {
+    height: 60%;
+    width: 50%;
+  }
   &--purple {
-    border-radius: 0 0 50% 50%;
+    border-bottom-right-radius: 50% 35%;
+    border-bottom-left-radius: 50% 35%;
     background: linear-gradient($Light-magenta, $Light-violet);
     top: -10%;
     left: -8%;
+    @media (max-width: 768px) {
+      top: -5%;
+      left: -16%;
+      border-bottom-right-radius: 50% 20%;
+      border-bottom-left-radius: 50% 20%;
+    }
   }
   &--gray {
-    border-radius: 50% 50% 0 0;
+    border-top-right-radius: 50% 35%;
+    border-top-left-radius: 50% 35%;
     background: #f8f2f9;
-    top: 10%;
+    bottom: -10%;
     right: -8%;
+    @media (max-width: 768px) {
+      bottom: -5%;
+      right: -16%;
+      border-top-right-radius: 50% 20%;
+      border-top-left-radius: 50% 20%;
+    }
   }
 }
 
@@ -40,6 +61,13 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  @media (max-width: 768px) {
+    max-width: 75%;
+    gap: 50px;
+    padding-block: 25px;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .mobile-app {
@@ -57,11 +85,19 @@ body {
     h1 {
       color: $very-dark-desaturated-violet;
       font-weight: 500;
+      text-align: left;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
     p {
       line-height: 1.6rem;
       font-weight: 400;
       color: $dark-grayish-violet;
+      text-align: left;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
   }
   &__screen-header {
@@ -72,6 +108,9 @@ body {
     border-radius: 20px 20px 5px 5px;
     box-shadow: 0 4px 8px #ccccccbd;
     background: linear-gradient($Light-violet, $Light-magenta);
+    @media (max-width: 768px) {
+    height: 75px;
+  }
   }
   &__screen-notch {
     width: 50%;
@@ -80,7 +119,7 @@ body {
     background: $white;
     position: absolute;
     top: -10px;
-    left: 88.75px;
+    left: 25%;
   }
   &__profile {
     display: flex;
@@ -90,8 +129,14 @@ body {
     gap: 10px;
     height: 50px;
     bottom: 0;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+  }
+  &__profile-left{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-self: center;
   }
   &__avatar {
     width: 30px;
@@ -109,6 +154,9 @@ body {
     display: flex;
     flex-direction: column;
     width: 220px;
+    @media (max-width: 768px) {
+      width: 120px;
+    }
     .name {
       margin: 0;
       font-size: 0.9rem;
@@ -146,8 +194,11 @@ body {
       padding-inline: 20px;
       border: transparent;
       background: $white;
+      &::placeholder {
+        color: $grayish-blue;
+      }
     }
-    input:focus{
+    input:focus {
       outline: none;
     }
     .btn {
@@ -173,8 +224,13 @@ body {
     background: #ebe1f2;
     font-size: 0.75rem;
     align-self: flex-start;
-        box-shadow: 0 4px 8px #cccccc8f;
+    box-shadow: 0 4px 8px #cccccc8f;
     border-radius: 5px 8px 8px 5px;
+    @media (max-width: 768px) {
+      max-width: 65%;
+      line-height: 0.9rem;
+      font-size: 0.65rem;
+    }
   }
   &-user {
     max-width: 55%;
@@ -184,8 +240,13 @@ body {
     background: $white;
     font-size: 0.75rem;
     align-self: flex-end;
-        box-shadow: 0 4px 8px #cccccc8f;
+    box-shadow: 0 4px 8px #cccccc8f;
     border-radius: 8px 8px 5px 8px;
+    @media (max-width: 768px) {
+      max-width: 65%;
+      line-height: 0.9rem;
+      font-size: 0.65rem;
+    }
     &-img {
       display: flex;
       gap: 10px;
@@ -208,16 +269,24 @@ body {
     max-width: 80%;
     padding: 15px;
     border-radius: 10px 10px 10px 5px;
-            box-shadow: 0 4px 8px #cccccc8f;
+    box-shadow: 0 4px 8px #cccccc8f;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 15px;
     background: linear-gradient(to right, $Light-magenta, $Light-violet);
+    @media (max-width: 768px) {
+      max-width: 75%;
+      padding: 10px;
+      gap: 10px;
+    }
     .time {
       color: #dd9aff;
       font-size: 0.7rem;
       margin-right: 25px;
+      @media (max-width: 768px) {
+        margin-right: 5px;
+      }
     }
     .price {
       color: $white;
