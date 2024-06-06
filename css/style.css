@@ -58,6 +58,7 @@ body {
   margin-top: 8%;
   margin-inline: auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -66,8 +67,10 @@ body {
     max-width: 75%;
     gap: 50px;
     padding-block: 25px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 }
 
@@ -80,6 +83,8 @@ body {
 .mobile-app__intro {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   max-width: 400px;
 }
 .mobile-app__intro h1 {
@@ -128,20 +133,22 @@ body {
 }
 .mobile-app__profile {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
   width: 100%;
   padding-inline: 15px;
   gap: 10px;
   height: 50px;
   bottom: 0;
-  justify-content: space-between;
-  align-items: center;
 }
 .mobile-app__profile-left {
   display: flex;
-  gap: 10px;
+  flex-direction: row;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  gap: 10px;
 }
 .mobile-app__avatar {
   width: 30px;
@@ -158,6 +165,8 @@ body {
 .mobile-app__info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 220px;
 }
 @media (max-width: 768px) {
@@ -211,10 +220,11 @@ body {
 }
 .mobile-app__input-area .btn {
   display: flex;
-  position: absolute;
-  right: 5px;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 5px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -226,11 +236,11 @@ body {
   max-width: 55%;
   line-height: 1.1rem;
   padding: 8px;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 8px rgba(204, 204, 204, 0.5607843137);
   color: hsl(276, 55%, 52%);
   background: #ebe1f2;
-  font-size: 0.75rem;
   align-self: flex-start;
-  box-shadow: 0 4px 8px rgba(204, 204, 204, 0.5607843137);
   border-radius: 5px 8px 8px 5px;
 }
 @media (max-width: 768px) {
@@ -244,11 +254,11 @@ body {
   max-width: 55%;
   line-height: 1.1rem;
   padding: 8px;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 8px rgba(204, 204, 204, 0.5607843137);
   color: hsl(271, 15%, 43%);
   background: hsl(0, 0%, 100%);
-  font-size: 0.75rem;
   align-self: flex-end;
-  box-shadow: 0 4px 8px rgba(204, 204, 204, 0.5607843137);
   border-radius: 8px 8px 5px 8px;
 }
 @media (max-width: 768px) {
@@ -281,6 +291,7 @@ body {
   border-radius: 10px 10px 10px 5px;
   box-shadow: 0 4px 8px rgba(204, 204, 204, 0.5607843137);
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   gap: 15px;

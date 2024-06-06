@@ -1,0 +1,19 @@
+@mixin flex-center($direction:row,$justify:center,$align:center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin chat-box{
+    max-width: 55%;
+    line-height: 1.1rem;
+    padding: 8px;
+    font-size: 0.75rem;
+    box-shadow: 0 4px 8px #cccccc8f;
+    @media (max-width: 768px) {
+      max-width: 65%;
+      line-height: 0.9rem;
+      font-size: 0.65rem;
+    }
+}

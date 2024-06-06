@@ -1,5 +1,6 @@
 // 引入變數
 @import "variables";
+@import "mixins";
 
 * {
   box-sizing: border-box;
@@ -52,15 +53,12 @@ body {
   max-width: 60%;
   margin-top: 8%;
   margin-inline: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-center(row, space-between, center);
   @media (max-width: 768px) {
     max-width: 75%;
     gap: 50px;
     padding-block: 25px;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-center(column, center, center);
   }
 }
 
@@ -72,8 +70,7 @@ body {
     box-shadow: 10px 20px 25px #ccccccbd;
   }
   &__intro {
-    display: flex;
-    flex-direction: column;
+    @include flex-center(column, $align: flex-start);
     max-width: 400px;
     h1 {
       color: $very-dark-desaturated-violet;
@@ -115,21 +112,17 @@ body {
     left: 25%;
   }
   &__profile {
-    display: flex;
+    @include flex-center($justify: space-between);
     position: absolute;
     width: 100%;
     padding-inline: 15px;
     gap: 10px;
     height: 50px;
     bottom: 0;
-    justify-content: space-between;
-    align-items: center;
   }
   &__profile-left {
-    display: flex;
+    @include flex-center;
     gap: 10px;
-    justify-content: center;
-    align-self: center;
   }
   &__avatar {
     width: 30px;
@@ -144,8 +137,7 @@ body {
     }
   }
   &__info {
-    display: flex;
-    flex-direction: column;
+    @include flex-center(column, $align: flex-start);
     width: 220px;
     @media (max-width: 768px) {
       width: 120px;
@@ -165,10 +157,7 @@ body {
   }
   &__chat-area {
     background: $light-grayish-violet;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(column);
     border-radius: 0 0 20px 20px;
     padding-top: 15px;
     padding-inline: 8px;
@@ -195,11 +184,9 @@ body {
       outline: none;
     }
     .btn {
-      display: flex;
+      @include flex-center;
       position: absolute;
       right: 5px;
-      justify-content: center;
-      align-items: center;
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -210,36 +197,18 @@ body {
 }
 .chatbox {
   &-walker {
-    max-width: 55%;
-    line-height: 1.1rem;
-    padding: 8px;
+    @include chat-box;
     color: $moderate-violet;
     background: #ebe1f2;
-    font-size: 0.75rem;
     align-self: flex-start;
-    box-shadow: 0 4px 8px #cccccc8f;
     border-radius: 5px 8px 8px 5px;
-    @media (max-width: 768px) {
-      max-width: 65%;
-      line-height: 0.9rem;
-      font-size: 0.65rem;
-    }
   }
   &-user {
-    max-width: 55%;
-    line-height: 1.1rem;
-    padding: 8px;
+    @include chat-box;
     color: $desaturated-dark-violet;
     background: $white;
-    font-size: 0.75rem;
     align-self: flex-end;
-    box-shadow: 0 4px 8px #cccccc8f;
     border-radius: 8px 8px 5px 8px;
-    @media (max-width: 768px) {
-      max-width: 65%;
-      line-height: 0.9rem;
-      font-size: 0.65rem;
-    }
     &-img {
       display: flex;
       gap: 10px;
@@ -263,9 +232,7 @@ body {
     padding: 15px;
     border-radius: 10px 10px 10px 5px;
     box-shadow: 0 4px 8px #cccccc8f;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include flex-center($justify:space-around);
     gap: 15px;
     background: linear-gradient(to right, $Light-magenta, $Light-violet);
     @media (max-width: 768px) {
@@ -332,6 +299,6 @@ body {
   }
   /* 顯示出來的 checkmark */
   input:checked ~ .checkmark:after {
-  display: block;
-}
+    display: block;
+  }
 }
